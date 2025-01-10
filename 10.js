@@ -31,6 +31,19 @@
 
 function groupBy(arr, key) {
   // 여기에 코드를 작성하세요.
+  return arr.reduce((acc, obj) => {
+    // 객체의 key값으로 그룹화
+    const groupKey = obj[key];
+
+    // 해당 그룹이 없으면 초기화
+    if (!acc[groupKey]) {
+      acc[groupKey] = [];
+    }
+    // 현재 객체를 그룹에 추가
+    acc[groupKey].push(obj);
+
+    return acc; // 누적값 반환
+  }, {}); // 초기값은 빈 객체
 }
 
 // export를 수정하지 마세요.

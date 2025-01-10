@@ -16,6 +16,14 @@
 // TODO: chunkArray 함수를 작성하세요.
 function chunkArray(arr, size) {
   // TODO
+  const result = [];
+  let idx = 0;
+
+  while (idx < arr.length) {
+    result.push(arr.slice(idx, idx + size));
+    idx += size;
+  }
+  return result;
 }
 
 // export를 수정하지 마세요.
